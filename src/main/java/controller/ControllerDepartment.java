@@ -4,18 +4,19 @@ import model.Employee;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import service.Service;
+import service.ServiceDepartment;
 
 import java.util.List;
 
 @RestController
 public class ControllerDepartment {
 
-    private final Service service;
+    private final ServiceDepartment service;
 
-    public ControllerDepartment(Service service) {
+    public ControllerDepartment(ServiceDepartment service) {
         this.service = service;
     }
+
 
     @GetMapping(path = "/departments/max-salary")
     public Employee getHighestPaidEmployee(
@@ -47,6 +48,4 @@ public class ControllerDepartment {
         employees = printEmployeesByDepartments();
         return employees;
     }
-
-
 }

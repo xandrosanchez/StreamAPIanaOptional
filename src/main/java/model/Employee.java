@@ -1,5 +1,6 @@
 package model;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Employee {
@@ -10,6 +11,21 @@ public class Employee {
     private double salary;
     private static int counter;
     private int id;
+
+    public List<Employee> getEmployersList() {
+        return EmployersList;
+    }
+
+    public void setEmployersList(List<Employee> employersList) {
+        EmployersList = employersList;
+    }
+
+    private List<Employee> EmployersList = List.of(
+            new Employee("James", "Mitch", 4, 144500),
+            new Employee("Mila", "Retavich", 1, 74000),
+            new Employee("Victor", "Sells", 2, 82402),
+            new Employee("Rezeda", "Mukhlieva", 3, 85000),
+            new Employee("Elina", "Isaeva", 5, 15000));
 
     public Employee(String firstName, String lastName, int department, double salary) {
         this.firstName = firstName;

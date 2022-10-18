@@ -14,14 +14,6 @@ public interface Service {
 
     public Employee findEmployee(String firstName, String lastName) throws EmployeeNotFoundException;
 
-    public Employee getLowestPaidEmployee(int department);
-
-    public Employee getHighestPaidEmployee(int department);
-
-    public List<Employee> printEmployeesForDepartment(int department);
-
-    public List<Employee> printEmployeesByDepartments();
-
     public List<Employee> printEmployees();
 
 }

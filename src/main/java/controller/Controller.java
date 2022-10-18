@@ -41,57 +41,10 @@ public class Controller {
         }
     }
 
-    @GetMapping(path = "/departments/max-salary")
-    public Object getHighestPaidEmployee(
-            @RequestParam(value = "departmentId") int departmentId) {
-        Employee employee;
-        employee = (Employee) getHighestPaidEmployee(departmentId);
-        return employee;
-    }
-
-    @GetMapping(path = "/departments/min-salary")
-    public Object getLowestPaidEmployee(
-            @RequestParam(value = "departmentId") int departmentId) {
-        Employee employee = null;
-        try {
-            employee = (Employee) getLowestPaidEmployee(departmentId);
-        } catch (Throwable e) {
-            return e.getMessage();
-        }
-        return employee;
-    }
-
-    @GetMapping(path = "/departments/all", params = "departmentId")
-    public Object printEmployeesForDepartment(
-            @RequestParam(value = "departmentId") int departmentId) {
-        List<Employee> employees = null;
-        try {
-            employees = (List<Employee>) printEmployeesForDepartment(departmentId);
-        } catch (Throwable e) {
-            return e.getMessage();
-        }
-        return employees;
-    }
-
-    @GetMapping(path = "/departments/all")
-    public Object printEmployeesByDepartments() {
-        List<Employee> employees = null;
-        try {
-            employees = (List<Employee>) printEmployeesByDepartments();
-        } catch (Throwable e) {
-            return e.getMessage();
-        }
-        return employees;
-    }
-
     @GetMapping(path = "/print")
-    public Object printEmployees() {
-        List<Employee> employees = null;
-        try {
-            employees = (List<Employee>) printEmployees();
-        } catch (Throwable e) {
-            return e.getMessage();
-        }
+    public List<Employee> printEmployees() {
+        List<Employee> employees;
+        employees = printEmployees();
         return employees;
     }
 

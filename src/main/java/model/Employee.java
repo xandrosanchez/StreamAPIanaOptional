@@ -8,7 +8,7 @@ public class Employee {
     private String lastName;
     private int department;
     private double salary;
-    public static int counter;
+    private static int counter;
     private int id;
 
     public Employee(String firstName, String lastName, int department, double salary) {

@@ -22,22 +22,13 @@ public class Controller {
     @GetMapping("/add")
     public Employee addEmployee(@RequestParam String firstName,
                                 @RequestParam String lastName) {
-        try {
-            return addEmployee(firstName, lastName);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        return addEmployee(firstName, lastName);
     }
 
     @GetMapping("/remove")
     public Employee deleteEmployee(@RequestParam String firstName,
                                    @RequestParam String lastName) {
-        try {
-            return deleteEmployee(firstName, lastName);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
+        return deleteEmployee(firstName, lastName);
     }
 
     @GetMapping("/find")
@@ -53,12 +44,8 @@ public class Controller {
     @GetMapping(path = "/departments/max-salary")
     public Object getHighestPaidEmployee(
             @RequestParam(value = "departmentId") int departmentId) {
-        Employee employee = null;
-        try {
-            employee = (Employee) getHighestPaidEmployee(departmentId);
-        } catch (Throwable e) {
-            return e.getMessage();
-        }
+        Employee employee;
+        employee = (Employee) getHighestPaidEmployee(departmentId);
         return employee;
     }
 

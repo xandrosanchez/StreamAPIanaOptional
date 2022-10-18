@@ -12,15 +12,11 @@ public class Employee {
     private static int counter;
     private int id;
 
-    public List<Employee> getEmployersList() {
-        return EmployersList;
+    public List<Employee> getEmployeeList() {
+        return employeeList;
     }
 
-    public void setEmployersList(List<Employee> employersList) {
-        EmployersList = employersList;
-    }
-
-    private List<Employee> EmployersList = List.of(
+    private List<Employee> employeeList = List.of(
             new Employee("James", "Mitch", 4, 144500),
             new Employee("Mila", "Retavich", 1, 74000),
             new Employee("Victor", "Sells", 2, 82402),

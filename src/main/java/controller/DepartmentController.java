@@ -2,50 +2,53 @@ package controller;
 
 import model.Employee;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import service.ServiceDepartment;
+import service.DepartmentService;
 
 import java.util.List;
+import java.util.Map;
 
+@RequestMapping("/departments")
 @RestController
-public class ControllerDepartment {
+public class DepartmentController {
 
-    private final ServiceDepartment service;
+    private final DepartmentService service;
 
-    public ControllerDepartment(ServiceDepartment service) {
+    public DepartmentController(DepartmentService service) {
         this.service = service;
     }
 
 
-    @GetMapping(path = "/departments/max-salary")
+    @GetMapping(path = "/max-salary")
     public Employee getHighestPaidEmployee(
             @RequestParam(value = "departmentId") int departmentId) {
         Employee employee;
-        employee = getHighestPaidEmployee(departmentId);
+        employee = service.getHighestPaidEmployee(departmentId);
         return employee;
     }
 
-    @GetMapping(path = "/departments/min-salary")
+    @GetMapping(path = "/min-salary")
     public Employee getLowestPaidEmployee(
             @RequestParam(value = "departmentId") int departmentId) {
         Employee employee;
-        employee = getLowestPaidEmployee(departmentId);
+        employee = service.getLowestPaidEmployee(departmentId);
         return employee;
     }
 
-    @GetMapping(path = "/departments/all", params = "departmentId")
+    @GetMapping(path = "/all", params = "departmentId")
     public List<Employee> printEmployeesForDepartment(
             @RequestParam(value = "departmentId") int departmentId) {
         List<Employee> employees;
-        employees = printEmployeesForDepartment(departmentId);
+        employees = service.printEmployeesForDepartment(departmentId);
         return employees;
     }
 
-    @GetMapping(path = "/departments/all")
-    public List<Employee> printEmployeesByDepartments() {
-        List<Employee> employees;
-        employees = printEmployeesByDepartments();
+    @GetMapping(path = "/all")
+    public Map<Integer, List<Employee>> printEmployeesByDepartments() {
+        Map<Integer, List<Employee>> employees;
+        employees = service.printEmployeesByDepartments();
         return employees;
     }
 }

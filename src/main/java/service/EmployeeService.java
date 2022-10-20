@@ -7,7 +7,7 @@ import model.Employee;
 
 import java.util.List;
 
-public interface Service {
+public interface EmployeeService {
     public Employee addEmployee(String firstName, String lastName) throws EmployeeAlreadyAddedException, EmployeeStorageIsFullException;
 
     public Employee deleteEmployee(String firstName, String lastName) throws EmployeeNotFoundException;

@@ -1,9 +1,9 @@
-package service;
+package com.example.streamapianaoptional.service;
 
-import exceptions.EmployeeAlreadyAddedException;
-import exceptions.EmployeeNotFoundException;
-import exceptions.EmployeeStorageIsFullException;
-import model.Employee;
+import com.example.streamapianaoptional.exceptions.EmployeeAlreadyAddedException;
+import com.example.streamapianaoptional.exceptions.EmployeeNotFoundException;
+import com.example.streamapianaoptional.exceptions.EmployeeStorageIsFullException;
+import com.example.streamapianaoptional.model.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Optional;
 @org.springframework.stereotype.Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-    private final List<Employee> employeeList = new ArrayList(List.of(
+    private final List<Employee> employeeList = new ArrayList<>(List.of(
             new Employee("James", "Mitch", 4, 144500),
             new Employee("Mila", "Retavich", 1, 74000),
             new Employee("Victor", "Sells", 2, 82402),

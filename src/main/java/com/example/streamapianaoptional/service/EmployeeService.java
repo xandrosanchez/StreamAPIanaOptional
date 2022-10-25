@@ -1,9 +1,9 @@
-package service;
+package com.example.streamapianaoptional.service;
 
-import exceptions.EmployeeAlreadyAddedException;
-import exceptions.EmployeeNotFoundException;
-import exceptions.EmployeeStorageIsFullException;
-import model.Employee;
+import com.example.streamapianaoptional.exceptions.EmployeeAlreadyAddedException;
+import com.example.streamapianaoptional.exceptions.EmployeeNotFoundException;
+import com.example.streamapianaoptional.exceptions.EmployeeStorageIsFullException;
+import com.example.streamapianaoptional.model.Employee;
 
 import java.util.List;
 

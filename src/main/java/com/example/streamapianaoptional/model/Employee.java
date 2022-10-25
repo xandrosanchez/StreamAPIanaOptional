@@ -1,6 +1,5 @@
-package model;
+package com.example.streamapianaoptional.model;
 
-import java.util.List;
 import java.util.Objects;
 
 public class Employee {

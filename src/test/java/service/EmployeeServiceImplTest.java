@@ -1,11 +1,11 @@
 package service;
 
-import exceptions.EmployeeAlreadyAddedException;
-import exceptions.EmployeeNotFoundException;
-import exceptions.EmployeeStorageIsFullException;
-import model.Employee;
+import com.example.streamapianaoptional.exceptions.EmployeeAlreadyAddedException;
+import com.example.streamapianaoptional.exceptions.EmployeeNotFoundException;
+import com.example.streamapianaoptional.exceptions.EmployeeStorageIsFullException;
+import com.example.streamapianaoptional.model.Employee;
+import com.example.streamapianaoptional.service.EmployeeServiceImpl;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -27,11 +27,6 @@ class EmployeeServiceImplTest {
         );
     }
 
-
-    @BeforeEach
-    void setUp() {
-
-    }
 
     @ParameterizedTest
     @MethodSource("provideParams")
@@ -130,6 +125,6 @@ class EmployeeServiceImplTest {
                 "Отдел:5\n" +
                 "Зарплата:15000.0\n" +
                 "]";
-        assertEquals(expected,service.printEmployees());
+        assertEquals(expected, service.printEmployees());
     }
 }

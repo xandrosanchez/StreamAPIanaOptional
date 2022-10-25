@@ -1,7 +1,7 @@
-package service;
+package com.example.streamapianaoptional.service;
 
-import exceptions.EmployeeNotFoundException;
-import model.Employee;
+import com.example.streamapianaoptional.exceptions.EmployeeNotFoundException;
+import com.example.streamapianaoptional.model.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
